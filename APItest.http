@@ -1,0 +1,34 @@
+### Test connexion api TMDB avec clé API
+GET https://api.themoviedb.org/3/account/21765379
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZDY1Yzg0YjE1OThiZWVhYzkzYjM4MjE4YjBjZjE0MiIsIm5iZiI6MTczNzQ0ODI2MC4zNTY5OTk5LCJzdWIiOiI2NzhmNWI0NDhhMjBjZWVlYjdhYWIyMDIiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.18A5a4IbF8itXgiryUdlbIw_1iY6CNHrLWndzygQeEo
+
+
+### Test api search donnée TMDB 
+GET https://api.themoviedb.org/3/movie/latest
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZDY1Yzg0YjE1OThiZWVhYzkzYjM4MjE4YjBjZjE0MiIsIm5iZiI6MTczNzQ0ODI2MC4zNTY5OTk5LCJzdWIiOiI2NzhmNWI0NDhhMjBjZWVlYjdhYWIyMDIiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.18A5a4IbF8itXgiryUdlbIw_1iY6CNHrLWndzygQeEo
+
+###
+GET https://api.themoviedb.org/3/trending/movie/day?language=en-U
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZDY1Yzg0YjE1OThiZWVhYzkzYjM4MjE4YjBjZjE0MiIsIm5iZiI6MTczNzQ0ODI2MC4zNTY5OTk5LCJzdWIiOiI2NzhmNWI0NDhhMjBjZWVlYjdhYWIyMDIiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.18A5a4IbF8itXgiryUdlbIw_1iY6CNHrLWndzygQeEo
+
+### Récup donnée TMDB -> Strapi
+GET http://localhost:1337/api/movies
+
+###
+POST http://localhost:1337/api/movies
+Content-Type: application/json
+
+{
+  "data": {
+    "Title": "The Wager"
+  }
+}
+
+### 
+DELETE http://localhost:1337/api/movies/agujm6ibswz41v2w9nwrrwl1
+
+###
+DELETE http://localhost:1337/api/movies/elx8j987n1gm9gz50o4itb39

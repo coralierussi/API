@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movies",
+  "info": {
+    "singularName": "movie",
+    "pluralName": "movies",
+    "displayName": "Movie"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "releaseDate": {
+      "type": "date"
+    },
+    "Director": {
+      "type": "string"
+    },
+    "Actors": {
+      "type": "text"
+    }
+  }
+}
