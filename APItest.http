@@ -15,20 +15,251 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZDY1Yzg0YjE1OThiZWVhYzkzYjM4MjE4YjBjZjE0MiIsIm5iZiI6MTczNzQ0ODI2MC4zNTY5OTk5LCJzdWIiOiI2NzhmNWI0NDhhMjBjZWVlYjdhYWIyMDIiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.18A5a4IbF8itXgiryUdlbIw_1iY6CNHrLWndzygQeEo
 
 ### Récup donnée TMDB -> Strapi
+GET http://localhost:1337/api/movies?populate=*
+
+### View movies
 GET http://localhost:1337/api/movies
 
-###
+### add movies
 POST http://localhost:1337/api/movies
 Content-Type: application/json
 
 {
   "data": {
-    "Title": "The Wager"
+    "Title": "Gladiator II",
+    "Description": "Vive les gladiateurs !!!",
+    "releaseDate" : "2024-08-11",
+    "actors" : [
+        "blr47gza0h50c4bcl7jv0ekx",
+        "m3eoowkc5lwwrm6654xrv27o",
+        "yfn0xl9wqkny5ny9i4sysuze",
+        "xgm5gdfknfg8ztf49ux08fs0",
+        "rzltxr5dj02fw5ayagt6a2nq"
+    ]
   }
 }
 
-### 
-DELETE http://localhost:1337/api/movies/agujm6ibswz41v2w9nwrrwl1
+### add movies
+POST http://localhost:1337/api/movies
+Content-Type: application/json
 
-###
-DELETE http://localhost:1337/api/movies/elx8j987n1gm9gz50o4itb39
+{
+  "data": {
+    "Title": "Le dernier étage",
+    "Description": "Commbat dans un immeuble pour affronter un boss final",
+    "releaseDate" : "2004-09-20",
+    "actors" : [
+        "blr47gza0h50c4bcl7jv0ekx",
+        "rzltxr5dj02fw5ayagt6a2nq",
+        "csfsh8uttlm7oo9pfx0dq4e2"
+
+    ]
+  }
+}
+
+
+### add movies
+POST http://localhost:1337/api/movies
+Content-Type: application/json
+
+{
+  "data": {
+    "Title": "Bienvenue chez les Johnson",
+    "Description": "Et si cette famille d'apparence si parfaite caché un sombre secret...",
+    "releaseDate" : "2019-06-03",
+    "actors" : [
+        "rzltxr5dj02fw5ayagt6a2nq",
+        "yfn0xl9wqkny5ny9i4sysuze",
+        "csfsh8uttlm7oo9pfx0dq4e2"
+
+    ]
+  }
+}
+
+### add movies
+POST http://localhost:1337/api/movies
+Content-Type: application/json
+
+{
+  "data": {
+    "Title": "Fast & Furious: La revisite",
+    "Description": "Les voitures ça vole!!!",
+    "releaseDate" : "2028-07-26",
+    "actors" : [
+        "hjzziqukepboqy57qlzwdqnb",
+        "oqc26r1lm3ek7c36saetbaba"
+    ]
+  }
+}
+
+### add movies
+POST http://localhost:1337/api/movies
+Content-Type: application/json
+
+{
+  "data": {
+    "Title": "A la recherche du trésor",
+    "Description": "Un bateau pirate s'amarre sur une île déserte afin de retrouver la cité perdue de l'Atlantide",
+    "releaseDate" : "2015-10-18",
+    "actors" : [
+        "hjzziqukepboqy57qlzwdqnb",
+        "qwh8qppveuphqj76lxhkqu4q",
+        "xgm5gdfknfg8ztf49ux08fs0"
+
+    ]
+  }
+}
+
+### add movies
+POST http://localhost:1337/api/movies
+Content-Type: application/json
+
+{
+  "data": {
+    "Title": "On a perdu le lapin de Pâques",
+    "Description": "Lors de la chasse des oeufs de Pâques, les enfants ne trouvent plus d'oeufs...",
+    "releaseDate" : "2008-03-15",
+    "actors" : [
+        "qwh8qppveuphqj76lxhkqu4q",
+        "xgm5gdfknfg8ztf49ux08fs0"
+
+    ]
+  }
+}
+
+### add movies
+POST http://localhost:1337/api/movies
+Content-Type: application/json
+
+{
+  "data": {
+    "Title": "Le Père Noël est le méchant",
+    "Description": "Et si le père Noël n'était pas le gentil mais le méchant de l'histoire...",
+    "releaseDate" : "1998-12-25",
+    "actors" : [
+        "xgm5gdfknfg8ztf49ux08fs0",
+        "qwh8qppveuphqj76lxhkqu4q",
+        "rzltxr5dj02fw5ayagt6a2nq",
+        "m3eoowkc5lwwrm6654xrv27o"
+
+    ]
+  }
+}
+
+### add movies
+POST http://localhost:1337/api/movies
+Content-Type: application/json
+
+{
+  "data": {
+    "Title": "Mise à jour de sécurité",
+    "Description": "Connaissez-vous vraiment les dessous de la cybersécurité ?",
+    "releaseDate" : "1902-05-30",
+    "actors" : [
+        "xgm5gdfknfg8ztf49ux08fs0",
+        "qwh8qppveuphqj76lxhkqu4q",
+        "rzltxr5dj02fw5ayagt6a2nq",
+        "m3eoowkc5lwwrm6654xrv27o"
+
+    ]
+  }
+}
+
+### Actors view
+GET http://localhost:1337/api/actors
+
+### Actors add
+POST http://localhost:1337/api/actors
+Content-Type: application/json
+
+{
+    "data":{
+        "name" : "Mescal",
+        "prenom" : "Paul"
+    }
+}
+
+### Actors add
+POST http://localhost:1337/api/actors
+Content-Type: application/json
+
+{
+    "data":{
+        "name" : "Washington",
+        "prenom" : "Denzel"
+    }
+}
+
+
+### Actors add
+POST http://localhost:1337/api/actors
+Content-Type: application/json
+
+{
+    "data":{
+        "name" : "Willis",
+        "prenom" : "Bruce"
+    }
+}
+
+### Actors add
+POST http://localhost:1337/api/actors
+Content-Type: application/json
+
+{
+    "data":{
+        "name" :"Nielsen",
+        "prenom" : "Connie"
+    }
+}
+
+
+### Actors add
+POST http://localhost:1337/api/actors
+Content-Type: application/json
+
+{
+    "data":{
+        "name" : "Quinn",
+        "prenom" : "Joseph"
+    }
+}
+
+### Actors add
+POST http://localhost:1337/api/actors
+Content-Type: application/json
+
+{
+    "data":{
+        "name" : "Diesel",
+        "prenom" : "Vin"
+    }
+}
+
+### Actors add
+POST http://localhost:1337/api/actors
+Content-Type: application/json
+
+{
+    "data":{
+        "name" : "Johnson",
+        "prenom" : "Dwayne"
+    }
+}
+
+### Actors add
+POST http://localhost:1337/api/actors
+Content-Type: application/json
+
+{
+    "data":{
+        "name" : "Depp",
+        "prenom" : "Johnny"
+    }
+}
+
+### Movies
+DELETE http://localhost:1337/api/movies/eo16m8q9o18dbfrqy44nkvd4
+
+### Actors
+DELETE http://localhost:1337/api/actors/yfn0xl9wqkny5ny9i4sysuze

@@ -398,6 +398,34 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiActorActor extends Struct.CollectionTypeSchema {
+  collectionName: 'actors';
+  info: {
+    description: '';
+    displayName: 'Actor';
+    pluralName: 'actors';
+    singularName: 'actor';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::actor.actor'> &
+      Schema.Attribute.Private;
+    movies: Schema.Attribute.Relation<'manyToMany', 'api::movie.movie'>;
+    name: Schema.Attribute.String;
+    prenom: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
@@ -537,6 +565,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiMovieMovie extends Struct.CollectionTypeSchema {
   collectionName: 'movies';
   info: {
+    description: '';
     displayName: 'Movie';
     pluralName: 'movies';
     singularName: 'movie';
@@ -545,7 +574,7 @@ export interface ApiMovieMovie extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    Actors: Schema.Attribute.Text;
+    actors: Schema.Attribute.Relation<'manyToMany', 'api::actor.actor'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1073,6 +1102,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::actor.actor': ApiActorActor;
       'api::article.article': ApiArticleArticle;
       'api::author.author': ApiAuthorAuthor;
       'api::category.category': ApiCategoryCategory;

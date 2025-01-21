@@ -4,7 +4,8 @@
   "info": {
     "singularName": "movie",
     "pluralName": "movies",
-    "displayName": "Movie"
+    "displayName": "Movie",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -23,8 +24,11 @@
     "Director": {
       "type": "string"
     },
-    "Actors": {
-      "type": "text"
+    "actors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::actor.actor",
+      "mappedBy": "movies"
     }
   }
 }
