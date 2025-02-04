@@ -17,25 +17,46 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZDY1Yzg0YjE1OThiZWVhYzkzY
 ### Récup donnée TMDB -> Strapi
 GET http://localhost:1337/api/movies?populate=*
 
+
+### Filtre 1 film
+GET http://localhost:1337/api/movies?filters[Title][$containsi]=Gladiator
+# GET http://localhost:1337/api/movies?filters[Title][$eq]=Gladiator%20II
+
+### Filtre 1 acteur
+GET http://localhost:1337/api/actors?filters[name][$eq]=Willis
+
+
+### 6 premiers films => ordre alphabétique
+
+
+### Récup nombre de films
+
+
+
+### 
+POST http://localhost:1337/api/auth/local
+Content-Type: application/json
+
+{
+    "identifier":"russicoralie812@gmail.com",
+    "password": "87BzLiDB~NrK&6&"
+}
+
+
 ### View movies
 GET http://localhost:1337/api/movies
+Content-Type: application/json
 
 ### add movies
 POST http://localhost:1337/api/movies
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzM3NjI4ODA1LCJleHAiOjE3NDAyMjA4MDV9.aNkXOA5jiqq2BDfefOB9Rf2njjndPFVI0288o7Z6Kv8
 
 {
   "data": {
     "Title": "Gladiator II",
     "Description": "Vive les gladiateurs !!!",
-    "releaseDate" : "2024-08-11",
-    "actors" : [
-        "blr47gza0h50c4bcl7jv0ekx",
-        "m3eoowkc5lwwrm6654xrv27o",
-        "yfn0xl9wqkny5ny9i4sysuze",
-        "xgm5gdfknfg8ztf49ux08fs0",
-        "rzltxr5dj02fw5ayagt6a2nq"
-    ]
+    "releaseDate" : "2024-08-11"
   }
 }
 
@@ -46,7 +67,7 @@ Content-Type: application/json
 {
   "data": {
     "Title": "Le dernier étage",
-    "Description": "Commbat dans un immeuble pour affronter un boss final",
+    "Description": "Combat dans un immeuble pour affronter un boss final",
     "releaseDate" : "2004-09-20",
     "actors" : [
         "blr47gza0h50c4bcl7jv0ekx",
