@@ -4,5 +4,5 @@ export const GET = async (req: NextRequest, {
     params: {id}
 }: {params: {id: string}}
 ) => {
-    return NextResponse.json ({message: `Utilisateur créé, ${id}`}, {status:210});
+    return NextResponse.json ({message: `Utilisateur, ${name}`}, {status:210});
 };

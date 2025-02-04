@@ -15,8 +15,8 @@ export const POST = async (req: NextRequest) => {
     const newQCM = await prisma.qcm.create({
         data: {
             title: body.data.title,
-            imgSrc: body.data.imgSrc,
+            //imgSrc: body.data.imgSrc,
         }
     })
-    return NextResponse.json ({message: ${title} });
+    return NextResponse.json ({message: `Question 1: ${title} `});
 };
